@@ -5,48 +5,113 @@ using UnityEngine.AI;
 
 public class AIController : MonoBehaviour
 {
-    [SerializeField]
-    private NavMeshAgent agent;
+    [Header("Components")]
+    AudioManager audioManager;
+    [SerializeField] private NavMeshAgent agent;
+    private Animator animator;
+    private Transform player;
 
-    [SerializeField]
-    private float range; //radius of sphere
+    [Header("Movement Settings")]
+    [SerializeField] private float range; // Radius of movement area
+    [SerializeField] private Transform centrePoint; // Center point of movement area
 
-    [SerializeField] private float speed = 4.5f;
-    [SerializeField] private float chaseSpeed = 10f;
+    [Header("Speed Settings")]
+    [SerializeField] private float walkSpeed = 4f;
+    [SerializeField] private float walkAcceleration = 5f;
+    [SerializeField] private float chaseSpeed = 5f;
+    [SerializeField] private float chaseAcceleration = 7f;
 
-    [SerializeField]
-    private Transform centrePoint; //centre of the area the agent wants to move around in
-    //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
+    public bool IsChasing { get; private set; }
+    public bool IsTerrorRadiusPlaying { get; private set; }
+
+    private void Awake()
+    {
+        // Initialize components
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player").transform;
+    }
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = chaseSpeed;
+        agent.speed = walkSpeed;
+        agent.acceleration = walkAcceleration;
+        IsChasing = false;
+        IsTerrorRadiusPlaying = false;
     }
-
 
     void Update()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance) //done with path
+        if (IsChasing)
+        {
+            Chase();
+        }
+        else
+        {
+            Patrol();
+        }
+    }
+
+    public void StartChase()
+    {
+        IsChasing = true;
+        agent.speed = chaseSpeed;
+        agent.acceleration = chaseAcceleration;
+        audioManager.PlaySFX(audioManager.enemyChase); // Chase growl
+        animator.SetBool("isChasing", true);
+        StopTerrorGrowl(); // Stop the terror growl when chasing
+    }
+
+    public void StopChase()
+    {
+        IsChasing = false;
+        agent.speed = walkSpeed;
+        agent.acceleration = walkAcceleration;
+        animator.SetBool("isChasing", false);
+    }
+
+    public void PlayTerror()
+    {
+        if (!IsChasing && !IsTerrorRadiusPlaying) // Only play if not chasing
+        {
+            IsTerrorRadiusPlaying = true;
+            audioManager.PlaySFX(audioManager.enemyGrowl, true); // True for looping the growl sound
+        }
+    }
+
+    public void StopTerrorGrowl()
+    {
+        IsTerrorRadiusPlaying = false;
+        audioManager.StopSFX(audioManager.enemyGrowl); // Stop the terror growl sound
+    }
+
+    private void Patrol()
+    {
+        if (agent.remainingDistance <= agent.stoppingDistance)
         {
             Vector3 point;
-            if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
+            if (RandomPoint(centrePoint.position, range, out point))
             {
-                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); // For debugging
                 agent.SetDestination(point);
             }
         }
-
     }
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
 
-        Vector3 randomPoint = center + Random.insideUnitSphere * range; //random point in a sphere 
+    private void Chase()
+    {
+        agent.speed = chaseSpeed;
+        agent.acceleration = chaseAcceleration;
+        agent.SetDestination(player.position);
+    }
+
+    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    {
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas)) //documentation: https://docs.unity3d.com/ScriptReference/AI.NavMesh.SamplePosition.html
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
         {
-            //the 1.0f is the max distance from the random point to a point on the navmesh, might want to increase if range is big
-            //or add a for loop like in the documentation
             result = hit.position;
             return true;
         }

@@ -37,5 +37,25 @@ public class AudioManager : MonoBehaviour
         coinSource.PlayOneShot(audioClip);
     }
 
+    // Play the growl sound (looped)
+    public void PlaySFX(AudioClip audioClip, bool loop)
+    {
+        if (audioClip == enemyGrowl) // Check if it's the growl sound
+        {
+            enemySource.clip = audioClip;
+            enemySource.loop = loop; // Set the loop flag
+            enemySource.Play(); // Start playing the growl
+        }
+    }
+
+    // Stop the growl sound
+    public void StopSFX(AudioClip audioClip)
+    {
+        if (audioClip == enemyGrowl)
+        {
+            enemySource.Stop(); // Stop playing the growl
+        }
+    }
+
 
 }
