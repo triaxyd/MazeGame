@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinRotate : MonoBehaviour
 {
     [SerializeField]
-    private float rotationSpeed = 80f;
+    private float rotationSpeed = 90f;
     // Update is called once per frame
     void Update()
     {
