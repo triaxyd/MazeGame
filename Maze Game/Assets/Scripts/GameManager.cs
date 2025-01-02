@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
         // Call the function to randomly select 10 coins
         ActivateRandomCoins(totalActiveCoins);
+
+
     }
 
     // Function to activate a random selection of coins
