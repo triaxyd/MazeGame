@@ -156,7 +156,7 @@ namespace StarterAssets
         {
             _hasAnimator = TryGetComponent(out _animator);
 
-            //JumpAndGravity();
+            JumpAndGravity();
             GroundedCheck();
             Move();
         }
@@ -301,18 +301,18 @@ namespace StarterAssets
                     _verticalVelocity = -2f;
                 }
 
-                // Jump
-                if (_input.jump && _jumpTimeoutDelta <= 0.0f)
-                {
+                // Jump 
+                //if (_input.jump && _jumpTimeoutDelta <= 0.0f)
+                //{
                     // the square root of H * -2 * G = how much velocity needed to reach desired height
-                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+                    //_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
                     // update animator if using character
-                    if (_hasAnimator)
-                    {
-                        _animator.SetBool(_animIDJump, true);
-                    }
-                }
+                    //if (_hasAnimator)
+                    //{
+                        //_animator.SetBool(_animIDJump, true);
+                    //}
+                //}
 
                 // jump timeout
                 if (_jumpTimeoutDelta >= 0.0f)

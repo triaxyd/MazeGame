@@ -1,31 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Reference to the parent GameObject that holds the coin prefabs
-    public GameObject coinsParent;
-
-    // List to hold references to all the coin GameObjects
+    [Header("Coin Management")]
+    public GameObject coinsParent; // Parent GameObject holding the coins
     private List<GameObject> allCoins = new List<GameObject>();
+    public int totalActiveCoins = 2;
+    private int collectedCoins = 0;
 
-    // Number of active coins that need to be collected
-    public int totalActiveCoins = 10;
+    [Header("UI References")]
+    public GameObject gameOverMenu; // Reference to the Game Over UI
+    public GameObject pauseMenu; // Optional pause menu reference
+    public GameObject gameWonMenu;
+    public TMPro.TextMeshProUGUI gameOverText; // Reference to the "YOU LOST" text
+    public GameObject player; // Reference to the player GameObject
 
-    // Start is called before the first frame update
+    private bool isGameOver = false;
+    private bool isGameWon = false;
+    private AudioManager audioManager;
+
+
     void Start()
     {
+        // Initialize AudioManager
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         // Populate the list with all the coin GameObjects under coinsParent
         foreach (Transform coin in coinsParent.transform)
         {
             allCoins.Add(coin.gameObject);
         }
 
-        // Call the function to randomly select 10 coins
+        // Activate random coins at the start
         ActivateRandomCoins(totalActiveCoins);
 
+        // Ensure Game Over menu is initially hidden
+        gameOverMenu.SetActive(false);
+        gameWonMenu.SetActive(false);
+        
+    }
 
+    void Update()
+    {
+        // Check if all coins are collected and player has won
+        if (!isGameWon && collectedCoins >= totalActiveCoins)
+        {
+            PlayerWon();
+        }
     }
 
     // Function to activate a random selection of coins
@@ -69,4 +93,89 @@ public class GameManager : MonoBehaviour
             coin.SetActive(true);
         }
     }
+
+    // This method will be called when the player collects a coin
+    public void CoinCollected()
+    {
+        collectedCoins++;
+    }
+
+
+    public void PlayerDied()
+    {
+        if (isGameOver) return; // Prevent multiple calls
+        isGameOver = true;
+
+        // Show the "YOU LOST" message
+        gameOverText.text = "THE MONSTER ATE YOU!";
+        gameOverMenu.SetActive(true);
+
+        // Stop the game time
+        Time.timeScale = 0f;
+
+        // Stop all background sounds
+        if (audioManager != null)
+        {
+            audioManager.StopLoopingSFX();         }
+
+        // Optionally, stop any movement sounds or music playing here
+
+        // Play any additional death animations or sounds
+        Animator playerAnimator = player.GetComponent<Animator>();
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetTrigger("PlayerDie");
+        }
+    }
+
+
+    // This method will be called when the player wins
+    public void PlayerWon()
+    {
+        if (isGameWon) return; // Prevent multiple calls
+        isGameWon = true;
+
+        // Show the "YOU WON" message
+        gameWonMenu.SetActive(true);
+
+        // Stop the game time
+        Time.timeScale = 0f;
+
+        // Stop all background sounds
+        if (audioManager != null)
+        {
+            audioManager.StopLoopingSFX(); // Stop any looping sounds
+        }
+
+        // Disable all player input (except for mouse clicks)
+        DisableInput();
+
+        // Optionally, play victory sounds here
+    }
+
+    // Disable all player input
+    private void DisableInput()
+    {
+        // Here you can disable all input except for mouse clicks
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.enabled = false; // Disable player controls
+        }
+    }
+
+    // Retry the game
+    public void RetryGame()
+    {
+        Time.timeScale = 1f; // Resume the game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // Go to Main Menu
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f; // Resume the game
+        SceneManager.LoadScene("MainMenu");
+    }
 }
+

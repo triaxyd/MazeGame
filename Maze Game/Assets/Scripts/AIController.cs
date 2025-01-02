@@ -129,4 +129,21 @@ public class AIController : MonoBehaviour
         result = Vector3.zero;
         return false;
     }
+
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("In collision");
+            // Player has collided with the enemy, trigger death or damage logic
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.Die();
+            }
+        }
+    }
+
+
 }
