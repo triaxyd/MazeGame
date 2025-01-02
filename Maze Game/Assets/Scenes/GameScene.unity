@@ -737,6 +737,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (5)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -2339,6 +2343,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (34)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -2588,6 +2596,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -5089,7 +5101,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5126,9 +5138,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5199,7 +5211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &116567895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -8055,6 +8067,82 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1046286495}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &181787953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181787954}
+  - component: {fileID: 181787956}
+  - component: {fileID: 181787955}
+  m_Layer: 5
+  m_Name: MiniMapBorder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &181787954
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181787953}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 556341565}
+  m_Father: {fileID: 885745158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -20, y: -20}
+  m_SizeDelta: {x: 175, y: 175}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &181787955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181787953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &181787956
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181787953}
+  m_CullTransparentMesh: 1
 --- !u!1001 &183038236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9110,7 +9198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &195722917
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9173,7 +9261,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9210,9 +9298,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -9274,7 +9362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &198849662
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9337,7 +9425,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9374,9 +9462,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -12403,6 +12491,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (13)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -13662,7 +13754,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -13699,9 +13791,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -13772,7 +13864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &290080450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -14029,7 +14121,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -14066,9 +14158,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -14139,7 +14231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!1001 &298160430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16445,7 +16537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &350276350
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16508,7 +16600,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -16545,9 +16637,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -16708,6 +16800,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -20026,7 +20122,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -20063,9 +20159,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -20136,7 +20232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!1001 &420763115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21073,13 +21169,13 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -21110,9 +21206,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -21183,7 +21279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!1001 &441384637
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21833,6 +21929,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -22152,7 +22252,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22189,9 +22289,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -22262,7 +22362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &467659538 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -22542,7 +22642,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22579,9 +22679,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -22652,7 +22752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &475253693 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -22744,7 +22844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &476537442
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22807,7 +22907,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -22844,9 +22944,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -24066,6 +24166,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -26263,6 +26367,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (18)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -26913,6 +27021,78 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 854923508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &556341564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556341565}
+  - component: {fileID: 556341567}
+  - component: {fileID: 556341566}
+  m_Layer: 5
+  m_Name: MiniMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &556341565
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556341564}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 181787954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 170, y: 170}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &556341566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556341564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: b38db0c5b9cc281468fc88b0f4d5f195, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &556341567
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556341564}
+  m_CullTransparentMesh: 1
 --- !u!4 &556502185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -27088,6 +27268,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -27740,7 +27924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &576671319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27803,7 +27987,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -27840,9 +28024,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -30158,7 +30342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &645070449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30221,7 +30405,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -30258,9 +30442,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -31122,7 +31306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &667384529
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31185,7 +31369,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -31222,9 +31406,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -31872,6 +32056,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (28)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -32251,7 +32439,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -32288,9 +32476,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -32361,7 +32549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!1001 &693294065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32908,7 +33096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &703881789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32971,7 +33159,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -33008,9 +33196,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -33656,6 +33844,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -34693,6 +34885,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (32)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -35147,6 +35343,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (33)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -35340,6 +35540,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -36096,7 +36300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &758325936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36159,7 +36363,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -36196,9 +36400,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -36395,7 +36599,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -36432,9 +36636,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -36505,7 +36709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!1001 &763505907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36911,6 +37115,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (20)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -36979,6 +37187,149 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 980040418}
   m_SourcePrefab: {fileID: 100100000, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+--- !u!1 &768285784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768285787}
+  - component: {fileID: 768285786}
+  - component: {fileID: 768285785}
+  - component: {fileID: 768285788}
+  m_Layer: 0
+  m_Name: MiniMapCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &768285785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768285784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+--- !u!20 &768285786
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768285784}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.2
+  far clip plane: 500
+  field of view: 40
+  orthographic: 1
+  orthographic size: 15
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 311
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: b38db0c5b9cc281468fc88b0f4d5f195, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &768285787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768285784}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.23683968, y: -0.66626346, z: 0.66626346, w: 0.23683968}
+  m_LocalPosition: {x: 17.743092, y: 25, z: 17.34277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -140.862, z: 0}
+--- !u!114 &768285788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768285784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52409165771fab429aea783b9b5747b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7845788360437440091}
+  minimapCamera: {fileID: 768285786}
 --- !u!1001 &768585390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37522,6 +37873,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -38774,7 +39129,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -38811,9 +39166,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -38884,7 +39239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &804974276 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5945734381718280981, guid: e2640158a51d3f140b9a300b124fee3c,
@@ -39878,6 +40233,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &834927559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834927560}
+  - component: {fileID: 834927563}
+  - component: {fileID: 834927562}
+  - component: {fileID: 834927561}
+  m_Layer: 8
+  m_Name: PlayerMiniMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834927560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834927559}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7845788360437440091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &834927561
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834927559}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &834927562
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834927559}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 24178269aee50fa45af0c61018153ba6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &834927563
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834927559}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &835369943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40508,6 +40968,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -42304,6 +42768,108 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ad9661321c6e84280c8fbe32492c06, type: 3}
+--- !u!1 &885745154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885745158}
+  - component: {fileID: 885745157}
+  - component: {fileID: 885745156}
+  - component: {fileID: 885745155}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &885745155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885745154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &885745156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885745154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &885745157
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885745154}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &885745158
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885745154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 181787954}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1001 &885809793
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43399,6 +43965,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -44664,7 +45234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &951629707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -44727,7 +45297,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -44764,9 +45334,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -45118,6 +45688,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -45664,7 +46238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &978129138
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45727,7 +46301,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -45764,9 +46338,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -46031,7 +46605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &980040419
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -46094,7 +46668,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -46131,9 +46705,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -49092,6 +49666,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (11)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -50743,6 +51321,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (30)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -51317,7 +51899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1099328747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51380,7 +51962,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -51417,9 +51999,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -52887,7 +53469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1138215441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52950,7 +53532,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -52987,9 +53569,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -54600,6 +55182,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (10)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -54915,7 +55501,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -54952,9 +55538,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -55025,7 +55611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &1189300566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -58711,6 +59297,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (27)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -59655,7 +60245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1317001498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -59718,7 +60308,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -59755,9 +60345,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -60042,6 +60632,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -60559,6 +61153,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -61306,6 +61904,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -62758,7 +63360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1374840284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62821,7 +63423,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -62858,9 +63460,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -63349,6 +63951,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -64317,7 +64923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1401734479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64380,7 +64986,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -64417,9 +65023,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -66615,6 +67221,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (14)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -68060,6 +68670,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -68677,7 +69291,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -68714,9 +69328,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -68787,7 +69401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &1511187229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -70042,7 +70656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1535694615
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70105,7 +70719,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -70142,9 +70756,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -70533,7 +71147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1542907738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70596,7 +71210,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -70633,9 +71247,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -71471,7 +72085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1561021151
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -71534,7 +72148,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -71571,9 +72185,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -73187,6 +73801,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (24)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -74150,6 +74768,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -75640,6 +76262,111 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1834346981}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1658284779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1658284780}
+  - component: {fileID: 1658284783}
+  - component: {fileID: 1658284782}
+  - component: {fileID: 1658284781}
+  m_Layer: 8
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1658284780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658284779}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.945, z: 0.54}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7845788360437440091}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1658284781
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658284779}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1658284782
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658284779}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 24178269aee50fa45af0c61018153ba6, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1658284783
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658284779}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1658475344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75975,7 +76702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1664514186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76038,7 +76765,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -76075,9 +76802,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -76694,6 +77421,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (9)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -76809,7 +77540,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -76846,9 +77577,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -76919,7 +77650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!4 &1678609496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446930, guid: 77ad9661321c6e84280c8fbe32492c06,
@@ -77291,7 +78022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1684833178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77354,7 +78085,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -77391,9 +78122,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -79310,7 +80041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1725209376
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79373,7 +80104,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -79410,9 +80141,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -79614,6 +80345,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -79999,6 +80734,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -81289,6 +82028,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (23)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -81708,7 +82451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1763257115
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81771,7 +82514,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -81808,9 +82551,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -84091,6 +84834,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (8)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -84311,7 +85058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1824247890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84374,7 +85121,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -84411,9 +85158,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -85349,6 +86096,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -87568,7 +88319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &1895933121
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87631,7 +88382,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -87668,9 +88419,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -89910,7 +90661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -8387617026056533479, guid: aa38d7b0e367ecc4aac915dcfe957879, type: 3}
+  - {fileID: 2100000, guid: d37a5cbead14fdb45b40ff3e2093be3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92326,6 +93077,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -95811,6 +96566,10 @@ PrefabInstance:
       value: SM_Icon_Coin_01 (7)
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
       value: Coin
       objectReference: {fileID: 0}
@@ -96434,6 +97193,10 @@ PrefabInstance:
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_Name
       value: SM_Icon_Coin_01 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1962960668092486, guid: 0ba572a262b50b24db3cdbe3ca8ec387, type: 3}
       propertyPath: m_TagString
@@ -99081,7 +99844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb9062ec26467049a16fbbcf0a465dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 80
+  rotationSpeed: 90
 --- !u!54 &2134800760
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99144,7 +99907,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.74575853, b: 0.26100624, a: 1}
-  m_Intensity: 5
+  m_Intensity: 10
   m_Range: 1.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -99181,9 +99944,9 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -99950,7 +100713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4358697219156607}
   - component: {fileID: 137218116129545017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104063,6 +104826,8 @@ Transform:
   - {fileID: 2980289388732300733}
   - {fileID: 3885434226479733385}
   - {fileID: 6426576573956726978}
+  - {fileID: 834927560}
+  - {fileID: 1658284780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7845788360437440092
@@ -104425,3 +105190,5 @@ SceneRoots:
   - {fileID: 2110691478}
   - {fileID: 745168169}
   - {fileID: 1655746382}
+  - {fileID: 768285787}
+  - {fileID: 885745158}

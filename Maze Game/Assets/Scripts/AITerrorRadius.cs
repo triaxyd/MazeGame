@@ -17,13 +17,10 @@ public class AITerrorRadius : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Check if the player is still within the radius
-        if (other.CompareTag("Player") && !aiController.IsChasing)
+        // Check if the player is still within the radius and terror growl is not playing
+        if (other.CompareTag("Player") && !aiController.IsChasing && !aiController.IsTerrorRadiusPlaying)
         {
-            if (!aiController.IsTerrorRadiusPlaying)
-            {
-                aiController.PlayTerror(); // Start the growl if not already playing
-            }
+            aiController.PlayTerror(); // Start the growl if not already playing
         }
     }
 

@@ -60,7 +60,9 @@ public class AIController : MonoBehaviour
         agent.acceleration = chaseAcceleration;
         audioManager.PlaySFX(audioManager.enemyChase); // Chase growl
         animator.SetBool("isChasing", true);
-        StopTerrorGrowl(); // Stop the terror growl when chasing
+
+        audioManager.StopLoopingSFX(); // Stop any existing looping sound (e.g., terror growl)
+        audioManager.PlayLoopingSFX(audioManager.enemyChase); 
     }
 
     public void StopChase()
@@ -69,6 +71,14 @@ public class AIController : MonoBehaviour
         agent.speed = walkSpeed;
         agent.acceleration = walkAcceleration;
         animator.SetBool("isChasing", false);
+
+        audioManager.StopLoopingSFX(); // Stop chase sound
+
+        // Check if the player is still in the terror radius, and if so, play the growl
+        if (IsTerrorRadiusPlaying)
+        {
+            audioManager.PlayLoopingSFX(audioManager.enemyGrowl); // Start growl if still in terror radius
+        }
     }
 
     public void PlayTerror()
@@ -76,7 +86,7 @@ public class AIController : MonoBehaviour
         if (!IsChasing && !IsTerrorRadiusPlaying) // Only play if not chasing
         {
             IsTerrorRadiusPlaying = true;
-            audioManager.PlaySFX(audioManager.enemyGrowl, true); // True for looping the growl sound
+            audioManager.PlayLoopingSFX(audioManager.enemyGrowl); // True for looping the growl sound
         }
     }
 

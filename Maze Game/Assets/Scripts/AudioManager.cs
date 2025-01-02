@@ -38,14 +38,17 @@ public class AudioManager : MonoBehaviour
     }
 
     // Play the growl sound (looped)
-    public void PlaySFX(AudioClip audioClip, bool loop)
+    public void PlayLoopingSFX(AudioClip audioClip)
     {
-        if (audioClip == enemyGrowl) // Check if it's the growl sound
-        {
-            enemySource.clip = audioClip;
-            enemySource.loop = loop; // Set the loop flag
-            enemySource.Play(); // Start playing the growl
-        }
+        enemySource.clip = audioClip;
+        enemySource.loop = true; 
+        enemySource.Play(); 
+    }
+
+    public void StopLoopingSFX()
+    {
+        enemySource.loop = false;
+        enemySource.Stop();
     }
 
     // Stop the growl sound
