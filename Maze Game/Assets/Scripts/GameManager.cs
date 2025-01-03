@@ -18,8 +18,9 @@ public class GameManager : MonoBehaviour
     public TMPro.TextMeshProUGUI gameOverText; // Reference to the "YOU LOST" text
     public GameObject player; // Reference to the player GameObject
 
-    private bool isGameOver = false;
-    private bool isGameWon = false;
+    private bool playerDied = false;
+    private bool playerWon = false;
+  
     private AudioManager audioManager;
 
 
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Check if all coins are collected and player has won
-        if (!isGameWon && collectedCoins >= totalActiveCoins)
+        if (!playerWon && collectedCoins >= totalActiveCoins)
         {
             PlayerWon();
         }
@@ -103,11 +104,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        if (isGameOver) return; // Prevent multiple calls
-        isGameOver = true;
+        if (playerDied || playerWon) return; // Prevent multiple calls
+        
+        playerDied = true;
 
         // Show the "YOU LOST" message
-        gameOverText.text = "THE MONSTER ATE YOU!";
+        gameOverText.text = "YOU DIED!";
         gameOverMenu.SetActive(true);
 
         // Stop the game time
@@ -116,7 +118,12 @@ public class GameManager : MonoBehaviour
         // Stop all background sounds
         if (audioManager != null)
         {
-            audioManager.StopLoopingSFX();         }
+            audioManager.StopLoopingSFX(); 
+        }
+
+        // Unlock cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         // Optionally, stop any movement sounds or music playing here
 
@@ -132,8 +139,8 @@ public class GameManager : MonoBehaviour
     // This method will be called when the player wins
     public void PlayerWon()
     {
-        if (isGameWon) return; // Prevent multiple calls
-        isGameWon = true;
+        if (playerWon || playerDied) return; // Prevent multiple calls
+        playerWon = true;
 
         // Show the "YOU WON" message
         gameWonMenu.SetActive(true);
@@ -147,21 +154,18 @@ public class GameManager : MonoBehaviour
             audioManager.StopLoopingSFX(); // Stop any looping sounds
         }
 
-        // Disable all player input (except for mouse clicks)
-        DisableInput();
+        // Unlock cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
-        // Optionally, play victory sounds here
-    }
-
-    // Disable all player input
-    private void DisableInput()
-    {
-        // Here you can disable all input except for mouse clicks
-        PlayerController playerController = player.GetComponent<PlayerController>();
-        if (playerController != null)
+        // Play any additional death animations or sounds
+        Animator playerAnimator = player.GetComponent<Animator>();
+        if (playerAnimator != null)
         {
-            playerController.enabled = false; // Disable player controls
+            playerAnimator.SetTrigger("PlayerWon");
         }
+
+
     }
 
     // Retry the game

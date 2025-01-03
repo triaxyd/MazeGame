@@ -14,17 +14,17 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         AudioListener.pause = false;
     }
 
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused) 
+            if (isPaused)
             {
                 ResumeGame();
             }
@@ -35,14 +35,15 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void PauseGame() 
+    public void PauseGame()
     {
+
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
 
         // Unlock cursor
-        Cursor.lockState = CursorLockMode.None; 
+        Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         // Disable Players Camera
@@ -75,7 +76,7 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
     }
 
-    public void GoToMainMenu() 
+    public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
@@ -83,8 +84,9 @@ public class PauseMenu : MonoBehaviour
         AudioListener.pause = false;
     }
 
-    public void QuitGame() 
+    public void QuitGame()
     {
         Application.Quit();
     }
 }
+
